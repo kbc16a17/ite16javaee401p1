@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>登録</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h1>登録</h1>
+        <h:form>
+            <h:panelGrid columns="3">
+                ユーザー名<h:inputText id="username" value="#{registerController.account.username}"/>
+                <h:message for="username" styleClass="error"/>
+                パスワード<h:inputSecret id="password" value="#{registerController.account.password}"/>
+                <h:message for="password" styleClass="error"/>
+                お名前<h:inputText id="name" value="#{registerController.account.name}"/>
+                <h:message for="name" styleClass="error"/>
+            </h:panelGrid>
+            <h:commandButton value="登録" action="#{registerController.register()}"/>
+        </h:form>
+        
+        <hr/>
+        <h:link outcome="login">ログインページへ</h:link><br/>
+    </h:body>
+</html>
